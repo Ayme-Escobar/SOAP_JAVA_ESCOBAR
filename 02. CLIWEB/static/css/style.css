@@ -1,0 +1,187 @@
+/* Estilos generales */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-image: url('/static/img/file1.jpg');
+    background-size: cover;
+    background-position: center;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+/* Encabezado con mensaje de bienvenida y botón de logout */
+.header {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    z-index: 1000;
+}
+
+/* Mensaje de bienvenida */
+.welcome-message {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #f1f1f1;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+/* Botón de logout */
+.logout-button {
+    background-color: #800080; /* Morado */
+    border: none;
+    color: white;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.logout-button:hover {
+    background-color: #5b005b; /* Morado oscuro */
+}
+
+.logout-button i {
+    margin-right: 5px;
+}
+
+/* Icono de logout dentro del botón */
+.logout-button i {
+    margin-left: 5px;
+}
+
+/* Margen superior para el contenido principal */
+.container {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 30px 40px;
+    border-radius: 15px;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.3s ease;
+    margin-top: 80px;
+}
+
+.container:hover {
+    transform: scale(1.02);
+}
+
+/* Título */
+h2 {
+    font-size: 1.8em;
+    color: #000000;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* Estilos del formulario */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    text-align: left;
+    font-size: 0.9em;
+    margin-bottom: 5px;
+    color: #666;
+}
+
+input, select {
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    color: #333;
+    transition: border-color 0.3s;
+}
+
+input:focus, select:focus {
+    border-color: #800080; /* Morado */
+    outline: none;
+}
+
+/* Botón */
+button {
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background: linear-gradient(135deg, #800080, #5b005b); /* Gradiente morado */
+    color: #fff;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #5b005b, #800080); /* Gradiente morado invertido */
+    transform: translateY(-3px);
+}
+
+/* Estilo del resultado */
+#result {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #f3e5f5; /* Fondo morado claro */
+    color: #6a1b9a; /* Texto morado oscuro */
+    font-size: 1em;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+/* Estilo de mensaje de error */
+#error {
+    color: #b71c1c;
+    font-size: 0.9em;
+    margin-bottom: 15px;
+    display: none;
+}
+
+/* Grupo de radio buttons en 2 columnas */
+.radio-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 20px;    
+    justify-items: center;
+    width: 100%;
+}
+
+.radio-group div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.radio-group input[type="radio"] {
+    margin-right: 10px;
+}
+
+.radio-group label {
+    font-size: 1em;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.radio-group input[type="radio"]:checked + label {
+    color: #800080; /* Morado */
+    font-weight: bold;
+}

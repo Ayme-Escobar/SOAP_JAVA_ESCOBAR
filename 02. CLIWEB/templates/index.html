@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertidor de Unidades</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="header">
+        <div class="welcome-message">
+            Hola, {{ usuario }}
+        </div>
+        <form action="{{ url_for('auth.logout') }}" method="post" class="logout-form">
+            <button type="submit" class="logout-button"><i class="fas fa-sign-out-alt"></i></button>
+        </form>
+    </div>
+
+    <div class="container">
+        <h2>Convertidor de Unidades Centímetros</h2>
+        <form id="convertForm">
+            <label for="parametro">Ingrese un valor en centímetros:</label>
+            <input type="number" step="any" id="parametro" required>
+            <div id="error">Por favor, ingrese un nuevo valor.</div>
+
+            <label>Seleccione la unidad:</label>
+            <div class="radio-group">
+                <div>
+                    <input type="radio" id="milimetros" name="unidad" value="milimetros" checked>
+                    <label for="milimetros">Milímetros</label>
+                </div>
+                <div>
+                    <input type="radio" id="metros" name="unidad" value="metros">
+                    <label for="metros">Metros</label>
+                </div>
+                <div>
+                    <input type="radio" id="kilometros" name="unidad" value="kilometros">
+                    <label for="kilometros">Kilómetros</label>
+                </div>
+                <div>
+                    <input type="radio" id="pies" name="unidad" value="pies">
+                    <label for="pies">Pies</label>
+                </div>
+                <div>
+                    <input type="radio" id="pulgadas" name="unidad" value="pulgadas">
+                    <label for="pulgadas">Pulgadas</label>
+                </div>
+                <div>
+                    <input type="radio" id="yardas" name="unidad" value="yardas">
+                    <label for="yardas">Yardas</label>
+                </div>
+            </div>
+
+            <button type="submit">Convertir</button>
+        </form>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        document.getElementById('convertForm').addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            const parametro = document.getElementById('parametro').value;
+            const unidad = document.querySelector('input[name="unidad"]:checked').value;
+            const errorDiv = document.getElementById('error');
+            const resultDiv = document.getElementById('result');
+
+            if (parseFloat(parametro) < 0) {
+                errorDiv.style.display = 'block';
+                resultDiv.style.display = 'none';
+                return;
+            } else {
+                errorDiv.style.display = 'none';
+            }
+
+            const response = await fetch('/convertir', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'Accept': 'application/json'
+                },
+                body: `parametro=${encodeURIComponent(parametro)}&unidad=${encodeURIComponent(unidad)}`
+            });
+
+            const data = await response.json();
+
+            if (data.result) {
+                resultDiv.style.display = 'block';
+                resultDiv.style.color = 'green';
+                resultDiv.textContent = data.result;
+            } else {
+                resultDiv.style.display = 'block';
+                resultDiv.style.color = 'red';
+                resultDiv.textContent = "Error: " + (data.error || "No se pudo realizar la conversión");
+            }
+        });
+    </script>
+</body>
+</html>

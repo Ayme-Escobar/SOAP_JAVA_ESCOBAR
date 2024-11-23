@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://ws.moster.edu.ec/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://ws.moster.edu.ec/">
+
+<xs:element name="cmAKm" type="tns:cmAKm"/>
+
+<xs:element name="cmAKmResponse" type="tns:cmAKmResponse"/>
+
+<xs:element name="cmAM" type="tns:cmAM"/>
+
+<xs:element name="cmAMResponse" type="tns:cmAMResponse"/>
+
+<xs:element name="cmAMm" type="tns:cmAMm"/>
+
+<xs:element name="cmAMmResponse" type="tns:cmAMmResponse"/>
+
+<xs:element name="cmAPies" type="tns:cmAPies"/>
+
+<xs:element name="cmAPiesResponse" type="tns:cmAPiesResponse"/>
+
+<xs:element name="cmAPulgadas" type="tns:cmAPulgadas"/>
+
+<xs:element name="cmAPulgadasResponse" type="tns:cmAPulgadasResponse"/>
+
+<xs:element name="cmAYardas" type="tns:cmAYardas"/>
+
+<xs:element name="cmAYardasResponse" type="tns:cmAYardasResponse"/>
+
+<xs:complexType name="cmAKm">
+<xs:sequence>
+<xs:element name="cm" type="xs:double"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cmAKmResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:double"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cmAPies">
+<xs:sequence>
+<xs:element name="cm" type="xs:double"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cmAPiesResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:double"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cmAPulgadas">
+<xs:sequence>
+<xs:element name="cm" type="xs:double"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cmAPulgadasResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:double"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cmAM">
+<xs:sequence>
+<xs:element name="cm" type="xs:double"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cmAMResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:double"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cmAYardas">
+<xs:sequence>
+<xs:element name="cm" type="xs:double"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cmAYardasResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:double"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cmAMm">
+<xs:sequence>
+<xs:element name="cm" type="xs:double"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cmAMmResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:double"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
