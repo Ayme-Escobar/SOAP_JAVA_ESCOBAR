@@ -1,31 +1,25 @@
 from suds.client import Client
-from config import Config
+from ec.edu.monster.config import Config
 
 
-class ConvUniService:
-    def __init__(self):        
+class ServicioSOAP:
+    def __init__(self):
         self.client = Client(Config.WSDL_URL)
 
-
-    def cmAPulgadas(self, cm):
+    def cm_a_pulgadas(self, cm):
         return self.client.service.cmAPulgadas(cm)
 
-
-    def cmAMm(self, cm):
+    def cm_a_mm(self, cm):
         return self.client.service.cmAMm(cm)
 
-
-    def cmAPies(self, cm):
+    def cm_a_pies(self, cm):
         return self.client.service.cmAPies(cm)
 
-
-    def cmAM(self, cm):
+    def cm_a_m(self, cm):
         return self.client.service.cmAM(cm)
 
-
-    def cmAYardas(self, cm):
+    def cm_a_yardas(self, cm):
         return self.client.service.cmAYardas(cm)
 
-
-    def cmAKm(self, cm):
+    def cm_a_km(self, cm):
         return self.client.service.cmAKm(cm)

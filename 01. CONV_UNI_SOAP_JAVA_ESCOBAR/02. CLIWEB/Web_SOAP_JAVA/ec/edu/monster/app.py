@@ -1,9 +1,9 @@
 from flask import Flask
-from config import Config
-from controlador.autenticacion_controlador import auth_bp
-from controlador.conversion_controlador import conversion_bp
+from ec.edu.monster.config import Config
+from ec.edu.monster.controlador.autenticacion_controlador import auth_bp
+from ec.edu.monster.controlador.conversion_controlador import conversion_bp
 
-
+# Crear la aplicación Flask
 app = Flask(__name__)
 app.config.from_object(Config)
 
